@@ -4731,11 +4731,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jatinsinghal\\Documents\\work\\webapp\\GraphApiWebApp\\GraphApiWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\jatinsinghal\\Documents\\Work\\GraphAPI-WebApp\\GraphApiWebApp.csproj",
       "projectName": "GraphApiWebApp",
-      "projectPath": "C:\\Users\\jatinsinghal\\Documents\\work\\webapp\\GraphApiWebApp\\GraphApiWebApp.csproj",
+      "projectPath": "C:\\Users\\jatinsinghal\\Documents\\Work\\GraphAPI-WebApp\\GraphApiWebApp.csproj",
       "packagesPath": "C:\\Users\\jatinsinghal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jatinsinghal\\Documents\\work\\webapp\\GraphApiWebApp\\obj\\",
+      "outputPath": "C:\\Users\\jatinsinghal\\Documents\\Work\\GraphAPI-WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jatinsinghal\\AppData\\Roaming\\NuGet\\NuGet.Config"

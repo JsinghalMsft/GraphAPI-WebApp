@@ -26,7 +26,7 @@ class GraphHelper
         //Console.WriteLine(_userClient);
 	}
 
-    public static Task<User> GetUserAsync()
+	public static Task<User> GetUserAsync()
 	{
 		// Ensure client isn't null
 		_ = _userClient ??
@@ -44,4 +44,38 @@ class GraphHelper
 			.GetAsync();
 	}
 
+	public static Task<IChannelMessagesCollectionPage> GetTeamsChannelMessagesAsync()
+	{
+		// Ensure client isn't null
+		_ = _userClient ??
+			throw new System.NullReferenceException("Graph has not been initialized for user auth");
+
+		return _userClient.Teams["87ff2845-8127-4baa-b050-87f9847559cb"].Channels["19:57720ec1cfba45f99354552d6d97df02@thread.skype"].Messages.Request().GetAsync();
+	}
+
+	public static Task<IMailFolderMessagesCollectionPage> GetOutlookEmailsAsync()
+	{
+		// Ensure client isn't null
+		_ = _userClient ??
+			throw new System.NullReferenceException("Graph has not been initialized for user auth");
+
+		return _userClient.Me
+			.MailFolders["Inbox"]
+			.Messages
+			.Request()
+			.Select(m => new
+			{
+				// Only request specific properties
+				m.From,
+				m.IsRead,
+				m.ReceivedDateTime,
+				m.Subject,
+				m.Body
+			})
+			// Get at most 25 results
+			.Top(25)
+			// Sort by received time, newest first
+			.OrderBy("ReceivedDateTime DESC")
+			.GetAsync();
+	}
 }
